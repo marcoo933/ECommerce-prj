@@ -9,7 +9,7 @@ const { database } = require('../config/helpers');
  * @param {Object} res - Oggetto della risposta HTTP.
  * @returns {Object} - Oggetto JSON contenente i prodotti trovati o un messaggio di errore.
  */
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
   // Verifica se il parametro 'page' è definito e diverso da 0, altrimenti lo imposta a 1
   let page = (req.query.page != undefined && req.query.page != 0 ) ? req.query.page : 1;
   // Verifica se il parametro 'limit' è definito e diverso da 0, altrimenti lo imposta a 10
@@ -101,6 +101,69 @@ router.get('/:prodId', (req, res) => {
     })
     .catch(err => console.log(err)); // Gestione degli errori durante l'esecuzione della query
 });
+
+
+/**
+ * Questo endpoint ottiene i prodotti in base alla categoria specificata.
+ *
+ * @param {Object} req - L'oggetto della richiesta HTTP.
+ * @param {Object} res - L'oggetto della risposta HTTP.
+ */
+router.get('/category/:catName', (req, res) => {
+  // Ottieni il numero di pagina dalla query string, se presente, altrimenti imposta il valore predefinito a 1
+  let page = (req.query.page !== undefined && req.query.page !== 0) ? req.query.page : 1;
+  
+  // Ottieni il limite di prodotti per pagina dalla query string, se presente, altrimenti imposta il valore predefinito a 10
+  const limit = (req.query.limit !== undefined && req.query.limit !== 0) ? req.query.limit : 10;
+
+  let startValue;
+  let endValue;
+
+  if (page > 0) {
+    // Calcola i valori di inizio e fine per la pagina corrente
+    startValue = (page * limit) - limit;
+    endValue = page * limit;
+  } else {
+    // Se il numero di pagina è inferiore o uguale a 0, imposta i valori di inizio e fine al valore predefinito
+    startValue = 0;
+    endValue = 10;
+  }
+
+  // Ottieni il nome della categoria dalla richiesta
+  const cat_title = req.params.catName;
+
+  // Esegui una query sul database per ottenere i prodotti corrispondenti alla categoria specificata
+  database.table('products as p')
+    .join([{
+      table:'categories as c',
+      on: `c.id = p.cat_id WHERE c.title LIKE '%${cat_title}%'`
+    }])
+    .withFields([
+      'c.title as category', 
+      'p.title as name', 
+      'p.price',
+      'p.quantity', 
+      'p.image', 
+      'p.id' 
+    ])
+    .slice(startValue, endValue) 
+    .sort({ id: -1 }) 
+    .getAll()
+    .then(prods => {
+      if (prods.length > 0) {
+        // Se sono stati trovati prodotti corrispondenti, restituisci la risposta con i prodotti e il conteggio
+        res.status(200).json({
+          count: prods.length,
+          products: prods
+        });
+      } else {
+        // Se non sono stati trovati prodotti corrispondenti, restituisci un messaggio di avviso
+        res.json({ message: 'Nessun prodotto trovato per la categoria ' + cat_title + '.' });
+      }
+    })
+    .catch(err => console.log(err)); 
+});
+
 
 
 module.exports = router;
