@@ -9,11 +9,11 @@ const app = express();
 
 // Import Routes
 const productsRoute = require('./routes/products');
-const usersRoute = require('./routes/users');
+const ordersRoute = require('./routes/orders');
 
 // use Routes
 app.use('/api/products', productsRoute);
-app.use('/api/users', usersRoute);
+app.use('/api/orders', ordersRoute);
 
 
 // Configura l'utilizzo di 'cors' come middleware per l'applicazione
