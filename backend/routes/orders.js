@@ -33,6 +33,8 @@ router.get("/", (req, res) => {
 			"p.price",
 			"u.username",
 		])
+    // ordina la response
+    .sort({id:1})
 		// Esegue la query e ottiene tutti gli ordini con i dettagli associati
 		.getAll()
 		.then((orders) => {
