@@ -1,29 +1,114 @@
+/* Stile dell'intestazione superiore */
 .header-top {
-  background-color: #3A3A3A;
-  height: 5vh;
+  background-color: #1B1C24;
+  height: 5vh; /* Altezza predefinita */
 
   @media (max-width: 960px) {
-    height: 10vh;
+    height: 10vh; /* Altezza quando la larghezza dello schermo è inferiore a 960px */
 
     @media (max-width: 600px) {
-      height: 5vh;
+      height: 8vh; /* Altezza quando la larghezza dello schermo è inferiore a 600px */
     }
   }
+
+  /* Stile delle informazioni di contatto */
   .contact-info {
-    margin-right: 10px;
+    margin-right: 10px; /* Margine destro */
   }
 
+  /* Stile delle informazioni utente */
   .user-info {
-    margin-left: 10px;
+    margin-left: 10px; /* Margine sinistro */
   }
 }
 
+/* Stile delle icone */
 .icons-style {
-  color: red;
-  transform: scale(0.7);
-  margin-left: 10px;
+  color: red; /* Colore rosso */
+  transform: scale(0.7); /* Ridimensionamento a 0.7 */
+  margin-left: 10px; /* Margine sinistro */
 }
 
+/* Stile del testo bianco */
 .text-white {
-  color: white;
+  color: white; /* Colore bianco */
 }
+
+/* Stile dei link del menu */
+.menu-items a {
+  margin-right: 10px; /* Margine destro */
+  color: #9AA097; /* Colore grigio */
+  font-size: medium; /* Dimensione del font */
+  text-decoration: none; /* Nessuna decorazione del testo */
+}
+
+/* Stile del link attivo nel menu */
+.menu-items a.active {
+  text-decoration: underline; /* Sottolineatura del testo */
+  color: red; /* Colore rosso */
+}
+
+/* Stile della toolbar personalizzata di Angular Material */
+.mat-toolbar-custom{
+  background: #fff; /* Sfondo bianco */
+  border-bottom: 2px solid #E8E7ED; /* Bordo inferiore di 2px */
+  height: 7vh; /* Altezza predefinita */
+}
+
+/* Stile del pulsante con icona */
+.icon-button{
+  color: white; /* Colore bianco */
+}
+
+
+/* Classe per l'elemento .header-middle */
+.header-middle {
+  background-color: #14161C; /* Colore di sfondo */
+  height: 13vh; /* Altezza */
+  border-bottom: 3px solid red; /* Bordo inferiore */
+}
+
+/* Classe per l'icona del pulsante Wishlist e Carrello */
+.wishlist-cart-icon-style {
+  color: white; /* Colore dell'icona */
+}
+
+/* Classe per il contenuto del badge numerico */
+::ng-deep .mat-badge-content{
+  background: red; /* Colore di sfondo del badge */
+}
+
+/* Classe per la descrizione dei pulsanti */
+.button-description{
+  color: white; /* Colore del testo */
+  font-size: small; /* Dimensione del testo */
+}
+
+/* Classe per la sezione di ricerca */
+.search {
+  border-radius: 20px 20px 20px 20px ; /* Bordi arrotondati */
+  background-color: white; /* Colore di sfondo */
+}
+
+/* Classe per l'input personalizzato */
+.custom-input{
+  outline: none; /* Rimuove l'outline di focus */
+  border: none; /* Rimuove il bordo */
+}
+
+/* Classe per il pulsante personalizzato */
+.custom-button {
+  border-radius: 0px 20px 20px 0px ; /* Bordi arrotondati */
+  background-color: red !important; /* Colore di sfondo (important per sovrascrivere altri stili) */
+  color: white !important; /* Colore del testo (important per sovrascrivere altri stili) */
+}
+
+/* Classe per il selettore personalizzato */
+.custom-select{
+  text-align: center; /* Allinea il testo al centro */
+
+  @media (max-width: 860px) {
+    font-size: 12px; /* Dimensione del testo per dispositivi con larghezza massima di 860px */
+  }
+}
+

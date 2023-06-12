@@ -1,30 +1,103 @@
-<div class="header-top" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="space-around center" >
+<!-- Intestazione superiore -->
+<div class="header-top" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="space-around center">
 
-
+  <!-- Informazioni di contatto -->
   <div fxFlex class="contact-info" fxHide.xs fxLayout="row" fxLayoutAlign="center center">
-
-      <mat-icon class="icons-style">call</mat-icon>
-      <span class="text-white">+021-95-51-54</span>
-
-      <mat-icon class="icons-style">mail</mat-icon>
-      <span class="text-white">email@email.com</span>
-
-      <mat-icon class="icons-style">location_on</mat-icon>
-      <span class="text-white">Via della montagna - 10</span>
-
+    <!-- Iterazione sull'array contactInfo -->
+    <ng-container *ngFor="let info of contactInfo">
+      <mat-icon class="icons-style">{{ info.icon }}</mat-icon>
+      <span class="text-white">{{ info.text }}</span>
+    </ng-container>
   </div>
 
+  <!-- Menu mobile -->
+  <ng-container *ngIf="windowWidth < 601">
+    <!-- Pulsante con matMenuTriggerFor mobileMenu -->
+    <button class="icon-button" mat-icon-button [matMenuTriggerFor]="mobileMenu" aria-label="pulsante con un menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- Elementi del menu mobile -->
+    <mat-menu #mobileMenu="matMenu">
+      <!-- Iterazione sull'array menuItems -->
+      <a mat-menu-item *ngFor="let menuItem of menuItems" routerLink="{{ menuItem.route }}">
+        {{ menuItem.label }}
+      </a>
+    </mat-menu>
+  </ng-container>
+
+  <!-- Informazioni utente -->
   <div fxFlex class="user-info" fxLayout="row" fxLayoutAlign="center center">
+    <!-- Iterazione sull'array userInfo -->
+    <ng-container *ngFor="let info of userInfo">
+      <mat-icon class="icons-style">{{ info.icon }}</mat-icon>
+      <span class="text-white">{{ info.text }}</span>
+    </ng-container>
+  </div>
 
-    <mat-icon class="icons-style">attach_money</mat-icon>
-    <span class="text-white">USD</span>
+  <div fxFlex="30" fxLayout="row" fxLayoutAlign="center center" fxShow.xs fxHide>
 
-    <mat-icon class="icons-style">person</mat-icon>
-    <span class="text-white">My Account</span>
+    <!-- Pulsante Wishlist -->
+    <button mat-icon-button fxFlex="40" >
+      <mat-icon matBadge="2" [color]="'warn'" class="wishlist-cart-icon-style">favorite</mat-icon>
+      <div class="button-description" fxHide.sm fxHide.xs>Your Wishlist</div>
+    </button>
+
+    <!-- Pulsante Carrello -->
+    <button mat-icon-button fxFlex="40">
+      <mat-icon matBadge="3" [color]="'warn'" class="wishlist-cart-icon-style">shopping_cart</mat-icon>
+      <div class="button-description" fxHide.sm fxHide.xs>Your Cart</div>
+    </button>
 
   </div>
 
+</div>
+
+<div class="header-middle" fxLayout="row" fxLayoutAlign="space-around center">
+
+  <!-- Logo -->
+  <div fxFlex="20" fxFlex.sm="30" fxHide.sm fxHide.xs fxLayout="row" fxLayoutAlign="end center">
+    <img src="/assets/images/logo.png" alt="Descrizione dell'immagine">
+  </div>
+
+  <!-- Ricerca -->
+  <div fxFlex="45" fxFlex.xs="90" class="search" fxLayout="row" fxLayoutAlign="center center" fxFlexOffset="60px" fxFlexOffset.xs="0px">
+
+    <!-- Select categoria -->
+    <mat-select class="custom-select" fxFlex="30" fxFlex.xs="40" [(ngModel)]="selectedCategory">
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </mat-option>
+    </mat-select>
+
+    <!-- Input ricerca -->
+    <input class="custom-input" fxFlex="50" matInput [(ngModel)]="searchTerm" placeholder="Search here">
+
+    <!-- Bottone ricerca -->
+    <button class="custom-button" fxFlex="20" mat-raised-button (click)="search()">Search</button>
+  </div>
+
+  <!-- Pulsanti wishlist e carrello -->
+  <div fxFlex="35" class="" fxLayout="row" fxLayoutAlign="start center" fxHide.xs>
+    <button mat-icon-button fxFlex="30" fxFlex.sm>
+      <mat-icon matBadge="2" [color]="'warn'" class="wishlist-cart-icon-style">favorite</mat-icon>
+      <div class="button-description" fxHide.xs>Your Wishlist</div>
+    </button>
+    <button mat-icon-button fxFlex="30" fxFlex.sm>
+      <mat-icon matBadge="3" [color]="'warn'" class="wishlist-cart-icon-style">shopping_cart</mat-icon>
+      <div class="button-description" fxHide.xs>Your Cart</div>
+    </button>
+  </div>
 
 </div>
 
 
+
+<!-- Menu desktop -->
+<mat-toolbar class="mat-toolbar-custom header-bottom" fxLayout="row" fxLayoutAlign="start center" *ngIf="windowWidth > 600">
+  <div class="menu-items" fxLayoutGap="30px" fxLayoutGap.sm="10px" fxFlexOffset="10" fxFlexOffset.sm="0">
+    <!-- Iterazione sull'array menuItems -->
+    <a routerLink="{{ menuItem.route }}" [class.active]="isMenuActive(menuItem.route)" *ngFor="let menuItem of menuItems">
+      {{ menuItem.label }}
+    </a>
+  </div>
+</mat-toolbar>

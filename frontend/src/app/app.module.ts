@@ -11,11 +11,20 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { FormsModule } from '@angular/forms';
 // Angular flex layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 //Mat Modules
 import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,9 +40,17 @@ import {MatIconModule} from '@angular/material/icon';
   imports: [
     FlexLayoutModule,
     MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatBadgeModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
