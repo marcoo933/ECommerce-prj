@@ -1,0 +1,75 @@
+.image-bg {
+  background: #E2E6ED; /* Sfondo dell'immagine */
+}
+
+.shop {
+  position: relative; /* Posizione relativa per consentire il posizionamento degli elementi figli */
+  display: inline-block; /* Visualizzazione inline-block per adattarsi al contenuto */
+  max-width: 100%; /* Larghezza massima del 100% */
+}
+
+.shop-img {
+  position: relative; /* Posizione relativa per consentire il posizionamento dell'elemento figlio ::before */
+  display: inline-block; /* Visualizzazione inline-block per adattarsi al contenuto */
+}
+
+.shop-img::before {
+  content: ""; /* Contenuto vuoto necessario per l'utilizzo di ::before */
+  position: absolute; /* Posizione assoluta rispetto all'elemento padre */
+  top: 0; /* Posizionamento dell'elemento in alto */
+  left: 0; /* Posizionamento dell'elemento a sinistra */
+  width: 100%; /* Larghezza del 100% rispetto all'elemento padre */
+  height: 100%; /* Altezza del 100% rispetto all'elemento padre */
+  background-color: rgba(255, 0, 0, 0.7); /* Colore di sfondo con canale alfa (trasparenza) */
+  clip-path: polygon(0% 0%, 92% 0%, 0% 146%); /* Forma del clipping path */
+  z-index: 1; /* Livello z per sovrapposizione */
+}
+
+.image-bg {
+  display: block; /* Visualizzazione block per adattarsi al contenuto */
+  max-width: 100%; /* Larghezza massima del 100% */
+}
+
+.shop-body {
+  position: absolute; /* Posizione assoluta rispetto all'elemento padre */
+  top: 25%; /* Posizionamento dell'elemento in alto rispetto all'elemento padre */
+  left: 25%; /* Posizionamento dell'elemento a sinistra rispetto all'elemento padre */
+  transform: translate(-50%, -50%); /* Traslazione per centrare l'elemento rispetto al suo centro */
+  z-index: 2; /* Livello z per sovrapposizione */
+  color: #fff; /* Colore del testo */
+  @media (max-width: 1300px) {
+    top: 35%; /* Modifica del posizionamento in base alla larghezza massima del 1300px */
+    left: 30%; /* Modifica del posizionamento in base alla larghezza massima del 1300px */
+  }
+  @media (max-width: 1100px) {
+    top: 45%; /* Modifica del posizionamento in base alla larghezza massima del 1100px */
+    left: 30%; /* Modifica del posizionamento in base alla larghezza massima del 1100px */
+  }
+  @media (max-width: 600px) {
+    top: 45%; /* Modifica del posizionamento in base alla larghezza massima del 600px */
+    left: 45%; /* Modifica del posizionamento in base alla larghezza massima del 600px */
+  }
+
+}
+
+.shop-body p {
+  margin: 0; /* Rimuovi il margine predefinito */
+  font-size: 3.5vh; /* Dimensione del carattere */
+  font-weight: bold; /* Grassetto */
+  @media (max-width: 1100px) {
+    font-size: 2vh; /* Modifica della dimensione del carattere in base alla larghezza massima del 1100px */
+  }
+}
+
+.cta-btn {
+  color: #fff; /* Colore del testo */
+  text-decoration: none; /* Rimuovi la sottolineatura dei collegamenti */
+  display: flex; /* Visualizzazione flex per allineare gli elementi figli */
+  font-size: 1.75vh; /* Dimensione del carattere */
+  font-weight: 500; /* Peso del carattere */
+  margin-top: 2vh; /* Margine superiore */
+  @media (max-width: 1100px) {
+    font-size: 1vh; /* Modifica della dimensione del carattere in base alla larghezza massima del 1100px */
+    margin-top: 0vh; /* Modifica del margine superiore in base alla larghezza massima del 1100px */
+  }
+}

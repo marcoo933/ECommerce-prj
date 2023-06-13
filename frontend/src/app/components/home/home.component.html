@@ -1,1 +1,10 @@
-<p>home works!</p>
+<!-- Sezione di layout con elemento "app-showcase" -->
+<div class="margin" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
+  <!-- Iterazione sugli elementi dell'array "showcaseArray" -->
+  <app-showcase *ngFor="let item of showcaseArray" fxFlex="20" [image]="item.image" [title]="item.title"></app-showcase>
+</div>
+
+<app-product [productDetails]="product" *ngFor="let product of products"></app-product>
+<!-- Sezione di testo "Home Works!" -->
+<div>Home Funziona!</div>
+

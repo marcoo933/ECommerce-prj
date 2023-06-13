@@ -1,0 +1,47 @@
+ul {
+  list-style-type: none; /* Rimuove i punti di elenco predefiniti per gli elementi di elenco non ordinati */
+}
+
+.section-top {
+  padding-top: 5vh; /* Aggiunge un padding superiore di 5% dell'altezza della viewport */
+  padding-bottom: 5vh; /* Aggiunge un padding inferiore di 5% dell'altezza della viewport */
+  background-color: #14161C; /* Imposta il colore di sfondo a #14161C */
+  color: #A19A96; /* Imposta il colore del testo a #A19A96 */
+
+  a {
+    color: #A19A96; /* Imposta il colore del testo dei link a #A19A96 */
+    text-decoration: none; /* Rimuove la sottolineatura dei link */
+    padding-top: 1.5vh; /* Aggiunge un padding superiore di 1.5% dell'altezza della viewport ai link */
+  }
+
+  h3 {
+    color: white; /* Imposta il colore del testo degli elementi h3 a bianco */
+    font-size: 25px; /* Imposta la dimensione del carattere degli elementi h3 a 25 pixel */
+  }
+
+  @media (max-width: 600px) {
+    a {
+      font-size: 7px; /* Riduce la dimensione del carattere dei link a 7 pixel quando la larghezza della viewport è inferiore a 600 pixel */
+    }
+    h3 {
+      font-size: 15px; /* Riduce la dimensione del carattere degli elementi h3 a 15 pixel quando la larghezza della viewport è inferiore a 600 pixel */
+    }
+  }
+
+  /* Stile delle icone */
+  .icons-style {
+    color: red; /* Imposta il colore delle icone a rosso */
+    transform: scale(0.7); /* Ridimensiona le icone al 70% della dimensione originale */
+  }
+}
+
+.section-bottom {
+  background-color: #1B1C24; /* Imposta il colore di sfondo a #1B1C24 */
+  height: 20vh; /* Imposta l'altezza della sezione inferiore a 20% dell'altezza della viewport */
+
+  .card-dimension {
+    height: 30px; /* Imposta l'altezza degli elementi con classe card-dimension a 30 pixel */
+    opacity: 0.2; /* Imposta l'opacità degli elementi con classe card-dimension a 0.2 */
+    margin-right: 10px; /* Aggiunge un margine destro di 10 pixel agli elementi con classe card-dimension */
+  }
+}

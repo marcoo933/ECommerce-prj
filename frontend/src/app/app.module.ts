@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductComponent } from './components/product/product.component';
+import { ProductComponent } from './components/home/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { FormsModule } from '@angular/forms';
 // Angular flex layout
@@ -23,8 +23,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { RouterModule } from '@angular/router';
+import { ShowcaseComponent } from './components/home/showcase/showcase.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     ProductComponent,
     ThankyouComponent,
+    ShowcaseComponent,
+    ProductComponent
   ],
   imports: [
     FlexLayoutModule,
@@ -45,6 +49,7 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
+    MatDividerModule,
     MatBadgeModule,
     BrowserModule,
     BrowserAnimationsModule,

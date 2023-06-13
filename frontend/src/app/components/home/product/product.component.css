@@ -1,0 +1,93 @@
+/* Definizione dello stile per la categoria del prodotto */
+.product-category {
+  margin-top: 10px; /* Margine superiore di 10 pixel */
+  color:lightgray; /* Colore del testo grigio chiaro */
+}
+
+/* Stile per le immagini */
+.image-style{
+  width:50vw; /* Larghezza delle immagini al 50% della larghezza della viewport */
+}
+
+/* Contenitore del prezzo */
+.price-container {
+  margin-top: 10px; /* Margine superiore di 10 pixel */
+}
+
+/* Prezzo corrente */
+.current-price {
+  font-weight: bold; /* Grassetto */
+  margin-right: 5px; /* Margine destro di 5 pixel */
+  color:red; /* Colore del testo rosso */
+  font-size:20px; /* Dimensione del testo di 20 pixel */
+}
+
+/* Prezzo scontato */
+.discounted-price {
+  text-decoration: line-through; /* Testo barrato */
+  color: lightgray; /* Colore del testo grigio chiaro */
+  font-size:15px; /* Dimensione del testo di 15 pixel */
+}
+
+/* Contenitore per la valutazione */
+.rating-container {
+  margin-top: 10px; /* Margine superiore di 10 pixel */
+  width: 50%; /* Larghezza del 50% */
+}
+
+/* Separatore personalizzato */
+.custom-divider {
+  margin-top: 0.6vh; /* Margine superiore di 0.6 viewport height */
+}
+
+/* Icona stella */
+.star-icon {
+  font-size: 12px; /* Dimensione del testo di 12 pixel */
+  color: red; /* Colore del testo rosso */
+}
+
+/* Icona stella nera */
+.star-icon-b{
+  font-size: 12px; /* Dimensione del testo di 12 pixel */
+  color: black; /* Colore del testo nero */
+}
+
+/* Contenitore per le icone */
+.icon-container {
+  margin-top: 10px; /* Margine superiore di 10 pixel */
+}
+
+/* Icona */
+.icon {
+  margin-right: 5px; /* Margine destro di 5 pixel */
+}
+
+/* Contenitore per "Aggiungi al carrello" */
+.add-to-cart-container {
+  margin-top: 10px; /* Margine superiore di 10 pixel */
+  background-color: #14161C; /* Colore di sfondo nero/blu scuro */
+  width: 50%; /* Larghezza del 50% */
+  height: 60px; /* Altezza di 60 pixel */
+  display: flex; /* Utilizza il modello di layout flessibile */
+  justify-content: center; /* Allinea al centro orizzontalmente */
+}
+
+/* Nome del prodotto */
+.product-name{
+  font-size: 20px; /* Dimensione del testo di 20 pixel */
+}
+
+/* Pulsante "Aggiungi al carrello" */
+.add-to-cart-button {
+  width: 100%; /* Larghezza del 100% */
+  border-radius: 20px; /* Raggio di bordo di 20 pixel (bordo arrotondato) */
+  background-color: red; /* Colore di sfondo rosso */
+  color:white !important; /* Colore del testo bianco con importanza alta */
+}
+
+/* Icona "Aggiungi al carrello" */
+.add-to-cart-icon {
+  border-radius: 25px; /* Raggio di bordo di 25 pixel (bordo arrotondato) */
+  background-color: red; /* Colore di sfondo rosso */
+  color:white !important; /* Colore del testo bianco con importanza alta */
+}

@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutAlign="space-around center">
+  <img src="{{productDetails.image}}" class="image-style" alt="Laptop">
+  <div class="product-category">{{productDetails.category}}</div> <!-- Categoria del prodotto -->
+  <div class="product-name">{{productDetails.name}}</div> <!-- Nome del prodotto -->
+  <div fxLayout="row" class="price-container">
+    <div class="current-price">{{productDetails.price}}$</div> <!-- Prezzo corrente del prodotto -->
+    <div class="discounted-price">{{productDetails.price}}$</div> <!-- Prezzo scontato del prodotto -->
+  </div>
+  <div fxLayout="row" fxAlign="center center" class="rating-container"> <!-- Contenitore per la valutazione -->
+    <mat-divider class="custom-divider" fxFlex="46" fxFlex.md="44" fxFlex.sm="42" fxFlex.xs="36"></mat-divider> <!-- Separatore personalizzato -->
+    <mat-icon fxFlex class="star-icon" *ngFor="let star of [].constructor(productDetails.rating)">star</mat-icon> <!-- Icona stella (visualizzata per il numero di rating) -->
+    <mat-icon fxFlex class="star-icon-b" *ngFor="let star of [].constructor(5-productDetails.rating)">star</mat-icon> <!-- Icona stella nera (visualizzata per il numero di rating mancanti) -->
+    <mat-divider class="custom-divider" fxFlex="46" fxFlex.md="44" fxFlex.sm="42" fxFlex.xs="36"></mat-divider> <!-- Separatore personalizzato -->
+  </div>
+  <div fxLayout="row" class="icon-container"> <!-- Contenitore per le icone -->
+    <mat-icon class="icon">favorite</mat-icon> <!-- Icona Preferiti -->
+    <mat-icon class="icon">sync_alt</mat-icon> <!-- Icona Sincronizza -->
+    <mat-icon class="icon">visibility</mat-icon> <!-- Icona Visibilità -->
+  </div>
+  <div class="add-to-cart-container" fxLayoutAlign="center center"> <!-- Contenitore per "Aggiungi al carrello" -->
+    <button mat-button fxHide.sm fxHide.xs class="add-to-cart-button" fxFlex="20">ADD TO CART</button> <!-- Pulsante "Aggiungi al carrello" -->
+    <button fxShow.sm fxShow.xs fxHide mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+      <mat-icon class="add-to-cart-icon">add_shopping_cart</mat-icon> <!-- Icona "Aggiungi al carrello" -->
+    </button>
+  </div>
+
+</div>
