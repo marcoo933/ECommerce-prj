@@ -1,4 +1,126 @@
 .margin {
-  margin-top: 5vh;
+  margin-top: 5vh; /* Margine superiore del 5% dell'altezza della viewport */
+}
+
+.toolbar-style {
+  background: #E3E7EF; /* Sfondo grigio */
+  margin-top: 3vh; /* Margine superiore del 3% dell'altezza della viewport */
+  margin-bottom: 3vh; /* Margine inferiore del 3% dell'altezza della viewport */
+}
+
+.img-style{
+  width: 25vw; /* Larghezza del 25% della viewport */
+}
+
+.circle {
+  width: 6vw; /* Larghezza del 6% della viewport */
+  height: 6vw; /* Altezza del 6% della viewport */
+  border-radius: 50%; /* Bordo arrotondato per ottenere una forma circolare */
+  background-color: #F1363B; /* Colore di sfondo rosso */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2vw; /* Dimensione del testo del 2% della viewport */
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center; /* Aggiunta della proprietà per centrare il testo */
+  margin-bottom: 1.7vw; /* Margine inferiore del 1.7% della viewport */
+  margin-top: 0.3vw; /* Margine superiore del 0.3% della viewport */
+  /* Inizio stile per la classe .time all'interno di .circle */
+  .time {
+    font-size: 1vw; /* Dimensione del testo del 1% della viewport */
+    font-weight: 300; /* Spessore del testo più sottile */
+  }
+  /* Fine stile per la classe .time */
+}
+
+.hot-text {
+  color: #232738; /* Colore del testo grigio scuro */
+  font-size: 2vw; /* Dimensione del testo del 2% della viewport */
+  font-weight: bold; /* Spessore del testo in grassetto */
+  margin-bottom: 1vw; /* Margine inferiore del 1% della viewport */
+}
+
+.collection-text {
+  color: #414144; /* Colore del testo grigio */
+  font-size: 1.5vw; /* Dimensione del testo del 1.5% della viewport */
+  font-weight: bold; /* Spessore del testo in grassetto */
+  margin-bottom: 1vw; /* Margine inferiore del 1% della viewport */
+}
+
+.add-to-cart-button {
+  width: 10vw; /* Larghezza del 10% della viewport */
+  height: 5vh; /* Altezza del 5% dell'altezza della viewport */
+  border-radius: 20px; /* Bordo arrotondato di 20 pixel */
+  background-color: red; /* Colore di sfondo rosso */
+  color:white !important; /* Colore del testo bianco con importanza alta */
+  font-size: 1vw; /* Dimensione del testo del 1% della viewport */
+  border: none; /* Rimuovi il bordo */
+  cursor: pointer;
+}
+
+#newsletter {
+  background-image: url("/assets/images/envelop.png"); /* Immagine di sfondo */
+  background-repeat: no-repeat, repeat; /* Non ripetere verticalmente, ripeti orizzontalmente */
+  min-height: 15vw; /* Altezza minima basata sulla larghezza del viewport */
+  background-size: 13vw; /* Dimensione dell'immagine di sfondo basata sulla larghezza del viewport */
+  background-position-x: 33%; /* Posizione orizzontale dell'immagine di sfondo */
+  margin-bottom: 3vw;
+}
+
+.text-style {
+  color: #4B4949; /* Colore del testo */
+  font-size: 2vw; /* Dimensione del carattere basata sulla larghezza del viewport */
+  margin-top: 4vh; /* Margine superiore */
+  font-weight: 400; /* Spessore del font */
+  strong {
+    color: #2B2A2B; /* Colore del testo per gli elementi strong */
+  }
+}
+
+/* Classe per la sezione di ricerca */
+.search {
+  border-radius: 20px 20px 20px 20px; /* Bordi arrotondati */
+  background-color: white; /* Colore di sfondo */
+  margin-top: 2vh; /* Margine superiore */
+}
+
+/* Classe per l'input personalizzato */
+.custom-input {
+  outline: none; /* Rimuove l'outline di focus */
+  border-radius: 25px 0 0 25px; /* Bordi arrotondati */
+  width: 25vw; /* Larghezza basata sulla larghezza del viewport */
+}
+
+/* Classe per il pulsante personalizzato */
+.custom-button {
+  border-radius: 0px 20px 20px 0px; /* Bordi arrotondati */
+  background-color: red !important; /* Colore di sfondo (important per sovrascrivere altri stili) */
+  color: white !important; /* Colore del testo (important per sovrascrivere altri stili) */
+}
+
+mat-toolbar{
+  background-color: white;
+}
+
+/* Stile dei link del menu */
+.menu-items a {
+  margin-right: 10px; /* Margine destro */
+  color: #9AA097; /* Colore grigio */
+  font-size: medium; /* Dimensione del font */
+  text-decoration: none; /* Nessuna decorazione del testo */
+}
+
+/* Stile del link attivo nel menu */
+.menu-items a.active {
+  text-decoration: underline; /* Sottolineatura del testo */
+  color: red; /* Colore rosso */
+}
+
+.dimension {
+  font-size: 1vw !important;
+  margin-bottom: 2vw;
 }
 

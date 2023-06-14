@@ -70,7 +70,17 @@
   height: 60px; /* Altezza di 60 pixel */
   display: flex; /* Utilizza il modello di layout flessibile */
   justify-content: center; /* Allinea al centro orizzontalmente */
+  opacity: 0; /* Opacità iniziale 0 (trasparente) */
+  transform: translateY(100%); /* Sposta verso il basso del 100% dell'altezza del contenitore */
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in; /* Transizione di opacità e trasformazione di 0.3 secondi con una curva di transizione "ease-in" */
 }
+
+/* Al passaggio del mouse sul contenitore del prodotto, mostra il contenitore "Aggiungi al carrello" */
+.product-container:hover .add-to-cart-container{
+  opacity: 1; /* Opacità 1 (visibile) */
+  transform: translateY(0%); /* Nessuna traslazione verticale (posizione originale) */
+}
+
 
 /* Nome del prodotto */
 .product-name{
@@ -91,3 +101,6 @@
   background-color: red; /* Colore di sfondo rosso */
   color:white !important; /* Colore del testo bianco con importanza alta */
 }
+
+
+

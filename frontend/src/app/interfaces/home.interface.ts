@@ -11,3 +11,9 @@ export interface productDetails {
   price?: number; // Opzionale: Prezzo del prodotto
   rating: number; // Valore richiesto: Valutazione del prodotto
 }
+
+export interface Timing {
+  title: string; // Titolo del timing
+  time: number; // Orario del timing
+}
+

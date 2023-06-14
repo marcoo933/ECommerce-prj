@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/home/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { FormsModule } from '@angular/forms';
+
 // Angular flex layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -39,7 +40,8 @@ import { ShowcaseComponent } from './components/home/showcase/showcase.component
     ProductComponent,
     ThankyouComponent,
     ShowcaseComponent,
-    ProductComponent
+    ProductComponent,
+
   ],
   imports: [
     FlexLayoutModule,

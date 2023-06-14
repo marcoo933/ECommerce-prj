@@ -72,4 +72,9 @@
     font-size: 1vh; /* Modifica della dimensione del carattere in base alla larghezza massima del 1100px */
     margin-top: 0vh; /* Modifica del margine superiore in base alla larghezza massima del 1100px */
   }
+  .icon-dim{
+    @media (max-width: 600px) {
+      font-size: 5vw; /* Modifica della dimensione del carattere in base alla larghezza massima del 600px */
+    }
+  }
 }

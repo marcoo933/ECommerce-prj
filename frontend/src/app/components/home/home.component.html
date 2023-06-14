@@ -4,7 +4,82 @@
   <app-showcase *ngFor="let item of showcaseArray" fxFlex="20" [image]="item.image" [title]="item.title"></app-showcase>
 </div>
 
+<mat-toolbar class="margin" fxLayout="column" fxLayoutAlign="center">
+  <div fxLayout="row" fxLayoutAlign="center" class="dimension">
+    <div fxFlex="20" fxFlex.sm="40" fxHide.xs>NEW PRODUCTS</div>
+    <div class="menu-items" fxFlex="40" fxFlex.sm="60" fxFlex.xs fxLayoutAlign="end" fxLayoutAlign.xs="center">
+      <!-- Iterazione sull'array menuItems -->
+      <a routerLink="{{ menuItem.route }}" [class.active]="isMenuActive(menuItem.route)" *ngFor="let menuItem of menuItems">
+        {{ menuItem.label }}
+      </a>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <mat-divider fxFlex="60" fxFlex.xs fxFlex.sm></mat-divider>
+  </div>
+</mat-toolbar>
+
+
 <app-product [productDetails]="product" *ngFor="let product of products"></app-product>
-<!-- Sezione di testo "Home Works!" -->
-<div>Home Funziona!</div>
+<!-- Componente personalizzato "app-product" utilizzato per visualizzare i dettagli dei prodotti. -->
+<!-- Viene iterato su ogni elemento dell'array "products" per generare dinamicamente il componente. -->
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="toolbar-style">
+  <!-- Contenitore principale con la classe CSS "toolbar-style". -->
+  <div fxLayout="row" fxLayoutAlign="center">
+    <!-- Div all'interno del contenitore con allineamento centrale. -->
+    <img src="/assets/images/product08.png" class="img-style">
+    <!-- Immagine del prodotto con la classe CSS "img-style". -->
+  </div>
+  <div fxFlex="30" fxLayout="column" fxLayoutAlign="center">
+    <!-- Div con layout flessibile e allineamento centrale. -->
+    <div fxLayout="row" fxLayoutAlign="space-around">
+      <!-- Div con layout flessibile in riga e allineamento spaziato. -->
+      <div *ngFor="let item of timing" class="circle">{{item.time}}<br><span class="time">{{item.title}}</span></div>
+      <!-- Iterazione su ogni elemento dell'array "timing" per generare i cerchi con numeri e testo. -->
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <!-- Div con layout flessibile in riga e allineamento centrale. -->
+      <span class="hot-text">HOT DEAL THIS WEEK</span>
+      <!-- Testo con la classe CSS "hot-text". -->
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <!-- Div con layout flessibile in riga e allineamento centrale. -->
+      <span class="collection-text">NEW COLLECTION UP TO 50% OFF</span>
+      <!-- Testo con la classe CSS "collection-text". -->
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <!-- Div con layout flessibile in riga e allineamento centrale. -->
+      <button class="add-to-cart-button">SHOP NOW</button>
+      <!-- Pulsante con la classe CSS "add-to-cart-button". -->
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <!-- Div con layout flessibile in riga e allineamento centrale. -->
+    <img src="/assets/images/product02.png" class="img-style">
+    <!-- Immagine del prodotto con la classe CSS "img-style". -->
+  </div>
+</div>
+
+<div id="newsletter">
+  <mat-divider></mat-divider> <!-- Separatore -->
+
+  <!-- Layout principale -->
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <p class="text-style">Sign Up for the <strong>NEWSLETTER</strong></p> <!-- Testo principale -->
+
+    <!-- Ricerca -->
+    <div class="search" fxLayout="row">
+      <!-- Input ricerca -->
+      <input class="custom-input" matInput placeholder="Search here">
+
+      <!-- Bottone ricerca -->
+      <button class="custom-button" fxFlex="30" mat-raised-button>
+        <mat-icon>mail</mat-icon><span fxHide.xs>Subscribe</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
 
